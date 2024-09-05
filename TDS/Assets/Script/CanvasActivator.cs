@@ -24,7 +24,7 @@ public class CanvasActivator : MonoBehaviour
         canvas.SetActive(false); // Desativa o Canvas
     }
 
-    void ShowCanvas()
+    public void ShowCanvas()
     {
         canvas.SetActive(true); // Ativa o Canvas
     }
