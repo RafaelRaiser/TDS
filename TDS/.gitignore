@@ -26,6 +26,10 @@
 # Visual Studio cache directory
 .vs/
 
+#Mansion set
+
+/[Aa]ssets/Mansion\ set/
+
 # Gradle cache directory
 .gradle/
 
