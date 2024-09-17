@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Telascarregamento.unity
+    guid: 1c014a7954f5c13439c0f8526a341a4e
+  - enabled: 1
+    path: Assets/Scenes/Mapa.unity
+    guid: d78f368c09bad744a99a052df93f0c20
   m_configObjects: {}

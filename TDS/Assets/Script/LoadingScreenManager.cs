@@ -8,7 +8,7 @@ public class LoadingScreenManager : MonoBehaviour
 {
     public GameObject loadingCanvas; // Referência ao Canvas da tela de carregamento
 
-    private void Start()
+    public  void Start()
     {
         // Inicialmente, o Canvas de carregamento deve estar ativo
         loadingCanvas.SetActive(true);
