@@ -12,7 +12,7 @@ public class PortaScript : MonoBehaviour
 
     public Transform playerCamera;
 
-    Animation portaAnimacao; 
+    Animation portaAnimacao;
 
     public TextMeshProUGUI interagirTexto;
 
@@ -20,7 +20,7 @@ public class PortaScript : MonoBehaviour
 
     string nomeObjetoInteragivel;
 
-    string nomeSemNumero;
+    Porta portaScript;
 
     private void Update()
     {
@@ -48,10 +48,13 @@ public class PortaScript : MonoBehaviour
         {
             if (hit.collider.CompareTag("Porta"))
             {
-                nomeObjetoInteragivel = hit.collider.gameObject.name;
-                nomeSemNumero = nomeObjetoInteragivel.TrimEnd('0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
+
+                portaScript = hit.collider.GetComponent<Porta>();
+
+                nomeObjetoInteragivel = portaScript.NomeAnimation();
+               
                 portaAnimacao = hit.collider.GetComponentInParent<Animation>();
-                Debug.Log(nomeSemNumero);
+
                 return true; // Jogador pode interagir
             }
         }
@@ -75,11 +78,12 @@ public class PortaScript : MonoBehaviour
 
         if (portaAberta)
         {
-            portaAnimacao.Play( nomeSemNumero + "_Open"); // Toca animação de abrir
+            
+            portaAnimacao.Play(nomeObjetoInteragivel + "_Open"); // Toca animação de abrir
         }
         else
         {
-            portaAnimacao.Play(nomeSemNumero + "_Close"); // Toca animação de fechar
+            portaAnimacao.Play(nomeObjetoInteragivel + "_Close"); // Toca animação de fechar
         }
     }
 }
