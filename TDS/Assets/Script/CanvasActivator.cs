@@ -8,7 +8,7 @@ public class CanvasActivator : MonoBehaviour
     void Update()
     {
         // Verifica se a tecla Shift est� sendo segurada
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) || FindObjectOfType<Player>().move==Vector3.zero)
         {
             HideCanvas();
         }
@@ -16,6 +16,8 @@ public class CanvasActivator : MonoBehaviour
         {
             ShowCanvas();
         }
+
+
 
     }
 
