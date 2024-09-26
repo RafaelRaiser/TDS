@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Porta
+  - 'Collectible '
   layers:
   - Default
   - TransparentFX
