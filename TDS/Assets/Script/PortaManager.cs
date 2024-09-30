@@ -1,26 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
-using System.Text.RegularExpressions;
-using UnityEngine.InputSystem.HID;
 
-public class PortaScript : MonoBehaviour
+public class PortaManager : MonoBehaviour
 {
     public float distanciaMax = 10f;
-
     public Transform playerCamera;
-
-    Animation portaAnimacao;
-
     public TextMeshProUGUI interagirTexto;
 
-    bool portaAberta = false;
-
-    string nomeObjetoInteragivel;
-
-    Porta portaScript;
+    private Porta portaAtual;
 
     private void Update()
     {
@@ -30,7 +19,7 @@ public class PortaScript : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                AlternarPorta();
+                portaAtual.AlternarPorta();
             }
         }
         else
@@ -48,42 +37,25 @@ public class PortaScript : MonoBehaviour
         {
             if (hit.collider.CompareTag("Porta"))
             {
-
-                portaScript = hit.collider.GetComponent<Porta>();
-
-                nomeObjetoInteragivel = portaScript.NomeAnimation();
-               
-                portaAnimacao = hit.collider.GetComponentInParent<Animation>();
-
+                portaAtual = hit.collider.GetComponent<Porta>();
                 return true; // Jogador pode interagir
             }
         }
+        portaAtual = null;
         return false; // Jogador não pode interagir
     }
 
     void MostrarTextoInteracao()
     {
-        interagirTexto.enabled = true;
-        interagirTexto.text = portaAberta ? "[E] Fechar" : "[E] Abrir";
+        if (portaAtual != null)
+        {
+            interagirTexto.enabled = true;
+            interagirTexto.text = portaAtual.EstaAberta() ? "[E] Fechar" : "[E] Abrir";
+        }
     }
 
     void OcultarTextoInteracao()
     {
         interagirTexto.enabled = false;
-    }
-
-    void AlternarPorta()
-    {
-        portaAberta = !portaAberta; // Alterna entre abrir e fechar
-
-        if (portaAberta)
-        {
-            
-            portaAnimacao.Play(nomeObjetoInteragivel + "_Open"); // Toca animação de abrir
-        }
-        else
-        {
-            portaAnimacao.Play(nomeObjetoInteragivel + "_Close"); // Toca animação de fechar
-        }
     }
 }
