@@ -399,7 +399,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2303921294396319333}
-  - component: {fileID: -2145606707974639094}
+  - component: {fileID: 8280373914166088849}
   m_Layer: 0
   m_Name: KeypadStandard
   m_TagString: Untagged
@@ -423,27 +423,22 @@ Transform:
   - {fileID: 1761916018302555948}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &-2145606707974639094
-BoxCollider:
+--- !u!114 &8280373914166088849
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2303921294396319335}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d09cfa4ffc3a404aab50621bc2230b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keypadUI: {fileID: 0}
+  displayText: {fileID: 0}
+  correctCode: 1234
+  script: {fileID: 0}
 --- !u!1 &2742457487408926263
 GameObject:
   m_ObjectHideFlags: 0

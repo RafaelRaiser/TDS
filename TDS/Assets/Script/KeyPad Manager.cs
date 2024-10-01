@@ -1,30 +1,26 @@
+using TMPro;
 using UnityEngine;
 
 public class KeypadInteraction : MonoBehaviour
 {
-    public float interactionDistance = 5f;
+    public float distanciaMax = 5f;
     public GameObject keypadUI;  // A UI do Keypad que será ativada
     public Transform playerCamera;  // A câmera do jogador
+    public TextMeshProUGUI textoInteracao;
 
     private bool isNearKeypad = false;
     private bool isPuzzleActive = false;
 
     void Update()
     {
-        // Raycast da câmera do player
-        Ray ray = new Ray(playerCamera.position, playerCamera.forward);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, interactionDistance))
+        if (VerificarInteracaoComKeypad())
         {
-            if (hit.collider.CompareTag("Keypad"))  // Certifique-se de adicionar a tag "Keypad" ao objeto
+            isNearKeypad = true;
+            AtualizarTexto();
+            // Pressione "E" para interagir
+            if (Input.GetKeyDown(KeyCode.E) && !isPuzzleActive)
             {
-                isNearKeypad = true;
-                // Pressione "E" para interagir
-                if (Input.GetKeyDown(KeyCode.E) && !isPuzzleActive)
-                {
-                    OpenKeypad();
-                }
+                OpenKeypad();
             }
         }
         else
@@ -33,19 +29,33 @@ public class KeypadInteraction : MonoBehaviour
         }
     }
 
+    bool VerificarInteracaoComKeypad()
+    {
+        Ray ray = new Ray(playerCamera.position, playerCamera.forward);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, distanciaMax))
+        {
+            if (hit.collider.CompareTag("KeyPad"))
+            {
+                return true; // Jogador pode interagir
+            }
+        }
+        return false; // Jogador não pode interagir
+    }
+
     void OpenKeypad()
     {
         isPuzzleActive = true;
         keypadUI.SetActive(true);  // Mostra a UI do Keypad
-        Cursor.lockState = CursorLockMode.None;  // Libera o cursor para a interação
-        Cursor.visible = true;
+
     }
 
-    public void CloseKeypad()
+
+
+    private void AtualizarTexto() 
     {
-        isPuzzleActive = false;
-        keypadUI.SetActive(false);  // Esconde a UI do Keypad
-        Cursor.lockState = CursorLockMode.Locked;  // Bloqueia o cursor novamente
-        Cursor.visible = false;
+        textoInteracao.text = "[E] INTERAGIR";
     }
+
 }

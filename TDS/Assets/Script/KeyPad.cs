@@ -1,47 +1,75 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class KeypadPuzzle : MonoBehaviour
+public class KeypadPuzzle : MonoBehaviour, IInteragivel
 {
-    public string correctCode = "1234";
-    private string playerInput = "";
-    Collider2D colidder;
-    Porta script;
+    // Interface: Define o texto exibido para interação com o keypad
+    public string TextInteragivel { get => text; set => text = value; }
+    private string text;
 
-    private void OnTriggerEnter(Collider other)
+    // Referências
+    public GameObject keypadUI; // Interface do Keypad
+    public TextMeshProUGUI displayText; // Exibe o código digitado no Keypad
+
+    // Estado do puzzle e código
+    private bool isNearKeypad = false;
+    private bool isPuzzleActive = false;
+    public string correctCode = "1234"; // Código correto a ser inserido
+    private string playerInput = ""; // Armazena o input do jogador
+
+    // Referência para controle da porta
+    private Collider2D colidder;
+    [SerializeField] private Porta script;
+
+    private void Start()
     {
-        if (other.CompareTag("Porta"))
-        {
-            script = other.GetComponent<Porta>();
-        }
+        // Define o texto inicial de interação
+        DefinirTexto();
     }
 
+    // Método chamado quando o jogador interage com o Keypad
+    public void Interact()
+    {
+        isPuzzleActive = true;
+        keypadUI.SetActive(true); // Mostra a UI do Keypad
+        Player.Instance.Movimentar = false; // Bloqueia o movimento do jogador
+        Cursor.lockState = CursorLockMode.Confined; // Libera o cursor
+        Cursor.visible = true; // Torna o cursor visível
+    }
 
+    // Adiciona dígitos ao código do jogador
     public void AddDigit(string digit)
     {
         playerInput += digit;
+        AtualizarDisplay(); // Atualiza o display do Keypad
 
+        // Verifica se o código inserido tem 4 dígitos
         if (playerInput.Length == 4)
         {
-            CheckCode();
+            CheckCode(); // Verifica se o código está correto
         }
     }
 
+    // Reseta o código inserido pelo jogador
     public void ResetCode()
     {
         playerInput = "";
     }
 
+    // Verifica se o código inserido está correto
     void CheckCode()
     {
         if (playerInput == correctCode)
         {
-            //doorControlScript.isOpen = true;  // Abre a porta
             Debug.Log("Code is correct! Door opened.");
+
+            // Abre a porta se o código estiver correto
             if (script != null)
             {
                 script.AbrirPorta();
+                CloseKeypad();
             }
         }
         else
@@ -49,13 +77,28 @@ public class KeypadPuzzle : MonoBehaviour
             Debug.Log("Incorrect code!");
         }
 
-        ResetCode();  // Reseta o código depois da tentativa
+        ResetCode(); // Reseta o código após a tentativa
     }
 
-    public void ClosePuzzle()
+    // Define o texto exibido ao interagir com o Keypad
+    public void DefinirTexto()
     {
-        //Chame o método CloseKeypad do script KeypadInteraction para fechar a UI
-        FindObjectOfType<KeypadInteraction>().CloseKeypad();
+        text = "[E] KEYPAD";
+    }
+
+    // Fecha a interface do Keypad
+    public void CloseKeypad()
+    {
+        isPuzzleActive = false;
+        keypadUI.SetActive(false); // Esconde a UI do Keypad
+        Player.Instance.Movimentar = true; // Permite o movimento do jogador
+        Cursor.lockState = CursorLockMode.Locked; // Bloqueia o cursor novamente
+        Cursor.visible = false; // Esconde o cursor
+    }
+
+    // Atualiza o display do Keypad com o input atual do jogador
+    void AtualizarDisplay()
+    {
+        displayText.text = playerInput;
     }
 }
-
