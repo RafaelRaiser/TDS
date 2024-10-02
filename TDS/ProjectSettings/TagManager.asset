@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Porta
   - 'Collectible '
+  - Wood
+  - Grass
   layers:
   - Default
   - TransparentFX
