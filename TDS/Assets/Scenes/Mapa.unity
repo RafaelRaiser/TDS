@@ -363,9 +363,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f50b3883225f424b8a20c64dd064c70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 3
   lookSensitivity: 2
-  slowSpeed: 2
+  slowSpeed: 1.5
   gravity: -9.81
   currentSpeed: 0
   move: {x: 0, y: 0, z: 0}
@@ -422,7 +422,7 @@ Transform:
   m_GameObject: {fileID: 267923834}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 141.44, y: 1.99, z: 135.93471}
+  m_LocalPosition: {x: 141.44, y: 0.96, z: 135.93471}
   m_LocalScale: {x: 0.52088267, y: 0.83716, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -471,15 +471,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91c00e4101d8aeb468e77f3ce2e5d7ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 3
+  slowSpeed: 1.5
   audioSource: {fileID: 138040946}
   grassSteps:
-  - {fileID: 8300000, guid: 1df5dbd7732ac154ea4599adf21c5318, type: 3}
-  - {fileID: 8300000, guid: 7c11299836e0e394fa435fb6f02dd79f, type: 3}
+  - {fileID: 8300000, guid: bc754fc46da61ce439ef42b63a372e82, type: 3}
+  - {fileID: 8300000, guid: 2f2f9348ef2a2a4449b796f888d7b5a6, type: 3}
   woodSteps:
-  - {fileID: 8300000, guid: c38a4faa2bd44fc438e473a2a6754b9d, type: 3}
-  - {fileID: 8300000, guid: 644cc2faf2454b24eb34d59eb3ddbf71, type: 3}
-  - {fileID: 8300000, guid: 59437ed8e9861a04c8403267039e9d9c, type: 3}
-  characterController: {fileID: 267923835}
+  - {fileID: 8300000, guid: 74684ab7b2acefc4ba943a3fad9f4041, type: 3}
+  - {fileID: 8300000, guid: 50e60f5a36ff029418083cbdb03dc37f, type: 3}
+  - {fileID: 8300000, guid: 061c3b8ae7b2cd74ea4fdf335e98baab, type: 3}
+  stepRate: 0.5
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
