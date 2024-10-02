@@ -1,18 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Configurações : MonoBehaviour
+public class ToggleWindowOnClick : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // Referência ao painel da janela (UI)
+    public GameObject windowPanel;
 
-    // Update is called once per frame
-    void Update()
+    // Estado inicial da janela (ligada ou desligada)
+    private bool isWindowActive = false;
+
+    // Função que será chamada pelo OnClick do Button
+    public void ToggleWindow()
     {
-        
+        isWindowActive = !isWindowActive;
+
+        // Ativa ou desativa o painel da janela
+        if (windowPanel != null)
+        {
+            windowPanel.SetActive(isWindowActive);
+        }
     }
 }
