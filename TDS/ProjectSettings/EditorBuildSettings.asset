@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Telascarregamento.unity
     guid: 1c014a7954f5c13439c0f8526a341a4e
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: a84ff61283712d843962956ec0e06a0c
+  - enabled: 1
     path: Assets/Scenes/Mapa.unity
     guid: d78f368c09bad744a99a052df93f0c20
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
