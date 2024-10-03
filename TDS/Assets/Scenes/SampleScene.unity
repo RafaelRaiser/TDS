@@ -2923,8 +2923,7 @@ MeshRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6203,6 +6202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f50b3883225f424b8a20c64dd064c70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  move: {x: 0, y: 0, z: 0}
   moveSpeed: 5
   lookSensitivity: 2
   slowSpeed: 2
@@ -30252,8 +30252,7 @@ MeshRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -41115,6 +41114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9156ec9b2f50fbf4a8ab94b3114c9a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rawImage: {fileID: 861751267}
 --- !u!4 &1983455850 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1877514259531892480, guid: 3aa5281aec313c043b3e82745af1ae17, type: 3}

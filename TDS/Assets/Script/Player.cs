@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
         Instance = this;
     }
 
+    public Vector3 move;
+
     public float moveSpeed = 5f;
     public float lookSensitivity = 2f;
     public float slowSpeed = 2f;
@@ -48,7 +50,7 @@ public class Player : MonoBehaviour
             float moveForward = Input.GetAxis("Vertical") * currentSpeed;
             float moveSide = Input.GetAxis("Horizontal") * currentSpeed;
 
-            Vector3 move = transform.right * moveSide + transform.forward * moveForward;
+            move = transform.right * moveSide + transform.forward * moveForward;
             characterController.Move(move * Time.deltaTime);
 
             // Controle de Visão (Câmera)
