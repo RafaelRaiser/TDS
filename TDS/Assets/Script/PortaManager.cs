@@ -44,7 +44,6 @@ public class PortaManager : MonoBehaviour
                 return true; // Jogador pode interagir
             }
         }
-
         objetoAtual = null;
         return false; // Jogador não pode interagir
     }

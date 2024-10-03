@@ -6183,7 +6183,7 @@ Transform:
   m_GameObject: {fileID: 267923834}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.972, y: 0.94, z: 108.102}
+  m_LocalPosition: {x: 32.51, y: 0.94, z: 116.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6202,7 +6202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 970c50f260c58364cbb493d570c21853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanciaMax: 10
+  distanciaMax: 5.06
   playerCamera: {fileID: 963194228}
   interagirTexto: {fileID: 233252245}
 --- !u!1001 &269444216
@@ -11285,7 +11285,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1526306069}
-        m_TargetAssemblyTypeName: KeypadPuzzle, Assembly-CSharp
+        m_TargetAssemblyTypeName: KeyPad, Assembly-CSharp
         m_MethodName: AddDigit
         m_Mode: 5
         m_Arguments:
@@ -14978,7 +14978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nomePorta: Door2
-  havePuzzle: 0
+  havePuzzle: 1
 --- !u!1001 &771444812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15693,7 +15693,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1526306069}
-        m_TargetAssemblyTypeName: KeypadPuzzle, Assembly-CSharp
+        m_TargetAssemblyTypeName: KeyPad, Assembly-CSharp
         m_MethodName: AddDigit
         m_Mode: 5
         m_Arguments:
@@ -17122,7 +17122,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1526306069}
-        m_TargetAssemblyTypeName: KeypadPuzzle, Assembly-CSharp
+        m_TargetAssemblyTypeName: KeyPad, Assembly-CSharp
         m_MethodName: AddDigit
         m_Mode: 5
         m_Arguments:
@@ -19728,7 +19728,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1526306069}
-        m_TargetAssemblyTypeName: KeypadPuzzle, Assembly-CSharp
+        m_TargetAssemblyTypeName: KeyPad, Assembly-CSharp
         m_MethodName: AddDigit
         m_Mode: 5
         m_Arguments:
@@ -26340,7 +26340,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1526306069}
-        m_TargetAssemblyTypeName: KeypadPuzzle, Assembly-CSharp
+        m_TargetAssemblyTypeName: KeyPad, Assembly-CSharp
         m_MethodName: AddDigit
         m_Mode: 5
         m_Arguments:
@@ -26924,7 +26924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9065674161080299280, guid: c724237c0b87afb439706d8526183e68, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.255
+      value: -5.256
       objectReference: {fileID: 0}
     - target: {fileID: 9065674161080299280, guid: c724237c0b87afb439706d8526183e68, type: 3}
       propertyPath: m_LocalPosition.y
@@ -27701,7 +27701,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1526306069}
-        m_TargetAssemblyTypeName: KeypadPuzzle, Assembly-CSharp
+        m_TargetAssemblyTypeName: KeyPad, Assembly-CSharp
         m_MethodName: CloseKeypad
         m_Mode: 1
         m_Arguments:
@@ -31126,30 +31126,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1384933730976451990, guid: b47bdf1669865c841ace96330ee3d7ec, type: 3}
-      propertyPath: m_TagString
-      value: KeyPad
-      objectReference: {fileID: 0}
-    - target: {fileID: 2225887874147284791, guid: b47bdf1669865c841ace96330ee3d7ec, type: 3}
-      propertyPath: m_TagString
-      value: KeyPad
-      objectReference: {fileID: 0}
-    - target: {fileID: 2303921293582486212, guid: b47bdf1669865c841ace96330ee3d7ec, type: 3}
-      propertyPath: m_TagString
-      value: KeyPad
-      objectReference: {fileID: 0}
-    - target: {fileID: 2303921294396319333, guid: b47bdf1669865c841ace96330ee3d7ec, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2303921294396319333, guid: b47bdf1669865c841ace96330ee3d7ec, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2303921294396319333, guid: b47bdf1669865c841ace96330ee3d7ec, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 2303921294396319333, guid: b47bdf1669865c841ace96330ee3d7ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 32.808
@@ -31190,48 +31166,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2303921294396319333, guid: b47bdf1669865c841ace96330ee3d7ec, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2303921294396319335, guid: b47bdf1669865c841ace96330ee3d7ec, type: 3}
       propertyPath: m_Name
       value: KeypadStandard
       objectReference: {fileID: 0}
-    - target: {fileID: 2303921294396319335, guid: b47bdf1669865c841ace96330ee3d7ec, type: 3}
-      propertyPath: m_TagString
-      value: KeyPad
+    - target: {fileID: 8591024630507013318, guid: b47bdf1669865c841ace96330ee3d7ec, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 771108267}
+    - target: {fileID: 8591024630507013318, guid: b47bdf1669865c841ace96330ee3d7ec, type: 3}
+      propertyPath: keypadUI
+      value: 
+      objectReference: {fileID: 1009489707}
+    - target: {fileID: 8591024630507013318, guid: b47bdf1669865c841ace96330ee3d7ec, type: 3}
+      propertyPath: correctCode
+      value: 5682
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
+    - target: {fileID: 8591024630507013318, guid: b47bdf1669865c841ace96330ee3d7ec, type: 3}
+      propertyPath: displayText
+      value: 
+      objectReference: {fileID: 973513498}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2303921294396319335, guid: b47bdf1669865c841ace96330ee3d7ec, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1526306069}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b47bdf1669865c841ace96330ee3d7ec, type: 3}
---- !u!1 &1526306068 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2303921294396319335, guid: b47bdf1669865c841ace96330ee3d7ec, type: 3}
+--- !u!114 &1526306069 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8591024630507013318, guid: b47bdf1669865c841ace96330ee3d7ec, type: 3}
   m_PrefabInstance: {fileID: 1526306067}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1526306069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526306068}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d09cfa4ffc3a404aab50621bc2230b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keypadUI: {fileID: 1009489707}
-  displayText: {fileID: 973513498}
-  correctCode: 1234
-  script: {fileID: 771108267}
 --- !u!4 &1527908843 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9065674161080299280, guid: c724237c0b87afb439706d8526183e68, type: 3}
@@ -33698,7 +33668,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1526306069}
-        m_TargetAssemblyTypeName: KeypadPuzzle, Assembly-CSharp
+        m_TargetAssemblyTypeName: KeyPad, Assembly-CSharp
         m_MethodName: AddDigit
         m_Mode: 5
         m_Arguments:
@@ -37289,7 +37259,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1526306069}
-        m_TargetAssemblyTypeName: KeypadPuzzle, Assembly-CSharp
+        m_TargetAssemblyTypeName: KeyPad, Assembly-CSharp
         m_MethodName: AddDigit
         m_Mode: 5
         m_Arguments:
@@ -38499,7 +38469,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1526306069}
-        m_TargetAssemblyTypeName: KeypadPuzzle, Assembly-CSharp
+        m_TargetAssemblyTypeName: KeyPad, Assembly-CSharp
         m_MethodName: AddDigit
         m_Mode: 5
         m_Arguments:
@@ -40697,7 +40667,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9156ec9b2f50fbf4a8ab94b3114c9a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawImage: {fileID: 861751267}
 --- !u!4 &1983455850 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1877514259531892480, guid: 3aa5281aec313c043b3e82745af1ae17, type: 3}
@@ -41185,7 +41154,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1526306069}
-        m_TargetAssemblyTypeName: KeypadPuzzle, Assembly-CSharp
+        m_TargetAssemblyTypeName: KeyPad, Assembly-CSharp
         m_MethodName: AddDigit
         m_Mode: 5
         m_Arguments:

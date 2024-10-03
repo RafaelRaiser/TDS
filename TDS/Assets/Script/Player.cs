@@ -51,21 +51,6 @@ public class Player : MonoBehaviour
             Vector3 move = transform.right * moveSide + transform.forward * moveForward;
             characterController.Move(move * Time.deltaTime);
 
-            // Exibe/Esconde o ícone de barulho
-            if (canvasActivator != null)
-            {
-                if (move != Vector3.zero && !Input.GetKey(KeyCode.LeftShift))
-                {
-                    // Mostra o ícone apenas se o jogador estiver se movendo sem o Shift
-                    canvasActivator.ShowCanvas();
-                }
-                else
-                {
-                    // Esconde o ícone se o jogador estiver parado ou movendo-se com Shift
-                    canvasActivator.HideCanvas();
-                }
-            }
-
             // Controle de Visão (Câmera)
             float mouseX = Input.GetAxis("Mouse X") * lookSensitivity;
             float mouseY = Input.GetAxis("Mouse Y") * lookSensitivity;

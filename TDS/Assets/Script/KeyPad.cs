@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class KeypadPuzzle : MonoBehaviour, IInteragivel
+public class KeyPad : MonoBehaviour, IInteragivel
 {
     // Interface: Define o texto exibido para interação com o keypad
     public string TextInteragivel { get => text; set => text = value; }
