@@ -1,9 +1,14 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CanvasActivator : MonoBehaviour
 {
     public GameObject rawImage; // Refer�ncia ao GameObject do Canvas que voc� deseja controlar
 
+    public void LoadScene()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
 
     void Update()
     {
