@@ -13,11 +13,10 @@ public class Player : MonoBehaviour
 
     public Vector3 move;
 
-    public float moveSpeed = 3f;
+    public float moveSpeed = 2f;  // Valor maior para garantir que o movimento seja perceptível
     public float lookSensitivity = 2f;
-    public float slowSpeed = 2f;
+    public float slowSpeed = 1f;
     public float gravity = -9.81f;
-    CanvasActivator canvasActivator;
 
     public float minVerticalAngle = -90f;
     public float maxVerticalAngle = 90f;
@@ -29,12 +28,12 @@ public class Player : MonoBehaviour
     private CharacterController characterController;
     private Transform cameraTransform;
 
-    private bool movimentar = true  ;
+    private bool movimentar = true;
 
     public bool Movimentar { get => movimentar; set => movimentar = value; }
 
     void Start()
-    {   
+    {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         characterController = GetComponent<CharacterController>();
@@ -46,7 +45,7 @@ public class Player : MonoBehaviour
         if (Movimentar)
         {
             // Movimentação
-            float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? slowSpeed : moveSpeed;
+            float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? slowSpeed : moveSpeed;  // Usa slowSpeed com Shift
             float moveForward = Input.GetAxis("Vertical") * currentSpeed;
             float moveSide = Input.GetAxis("Horizontal") * currentSpeed;
 
@@ -77,6 +76,5 @@ public class Player : MonoBehaviour
             velocity.y += gravity * Time.deltaTime;
             characterController.Move(velocity * Time.deltaTime);
         }
-
     }
 }
