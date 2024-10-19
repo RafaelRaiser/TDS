@@ -8,6 +8,9 @@ TagManager:
   - 'Collectible '
   - Wood
   - Grass
+  - KeyPad
+  - Floor
+  - Object
   layers:
   - Default
   - TransparentFX
