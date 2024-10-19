@@ -5,25 +5,32 @@ using UnityEngine.UI;
 
 public class InterfaceManager : MonoBehaviour
 {
+    public GameObject inventoryPanel; // Nome corrigido
     public Text itemText;
+    bool inventarioAtivado;
 
-    public GameObject invetoryPanel;
-
-    bool InventarioAtivado;
     void Start()
     {
+        inventarioAtivado = false;
+        inventoryPanel.SetActive(inventarioAtivado); // Certifica-se de que o inventário começa desativado
         itemText.text = null;
     }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            InventarioAtivado = !InventarioAtivado;
-            invetoryPanel.SetActive(InventarioAtivado);
+            inventarioAtivado = !inventarioAtivado;
+            inventoryPanel.SetActive(inventarioAtivado);
         }
-        if (InventarioAtivado)
+
+        if (inventarioAtivado)
         {
             Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 }

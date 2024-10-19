@@ -15,8 +15,8 @@ public class KeyPad : MonoBehaviour, IInteragivel
 
     // Estado do puzzle e código
     private bool isNearKeypad = false;
-    private bool isPuzzleActive = false;
-    public string correctCode = "1234"; // Código correto a ser inserido
+    private bool isPuzzleActive = false; // Usado para verificar se o puzzle está ativo
+    public string correctCode = "5682"; // Código correto a ser inserido
     private string playerInput = ""; // Armazena o input do jogador
 
     // Referência para controle da porta
@@ -32,11 +32,13 @@ public class KeyPad : MonoBehaviour, IInteragivel
     // Método chamado quando o jogador interage com o Keypad
     public void Interact()
     {
-        isPuzzleActive = true;
-        keypadUI.SetActive(true); // Mostra a UI do Keypad
-        Player.Instance.Movimentar = false; // Bloqueia o movimento do jogador
-        Cursor.lockState = CursorLockMode.Confined; // Libera o cursor
-        Cursor.visible = true; // Torna o cursor visível
+        if (!isPuzzleActive) // Verifica se o puzzle não está ativo
+        {
+            isPuzzleActive = true; // Ativa o estado do puzzle
+            keypadUI.SetActive(true); // Mostra a UI do Keypad
+            Cursor.lockState = CursorLockMode.Confined; // Libera o cursor
+            Cursor.visible = true; // Torna o cursor visível
+        }
     }
 
     // Adiciona dígitos ao código do jogador
@@ -56,6 +58,7 @@ public class KeyPad : MonoBehaviour, IInteragivel
     public void ResetCode()
     {
         playerInput = "";
+        AtualizarDisplay(); // Reseta o display
     }
 
     // Verifica se o código inserido está correto
@@ -89,11 +92,13 @@ public class KeyPad : MonoBehaviour, IInteragivel
     // Fecha a interface do Keypad
     public void CloseKeypad()
     {
-        isPuzzleActive = false;
-        keypadUI.SetActive(false); // Esconde a UI do Keypad
-        Player.Instance.Movimentar = true; // Permite o movimento do jogador
-        Cursor.lockState = CursorLockMode.Locked; // Bloqueia o cursor novamente
-        Cursor.visible = false; // Esconde o cursor
+        if (isPuzzleActive) // Verifica se o puzzle está ativo antes de fechá-lo
+        {
+            isPuzzleActive = false; // Desativa o estado do puzzle
+            keypadUI.SetActive(false); // Esconde a UI do Keypad
+            Cursor.lockState = CursorLockMode.Locked; // Bloqueia o cursor novamente
+            Cursor.visible = false; // Esconde o cursor
+        }
     }
 
     // Atualiza o display do Keypad com o input atual do jogador

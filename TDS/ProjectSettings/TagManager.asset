@@ -8,8 +8,8 @@ TagManager:
   - 'Collectible '
   - Wood
   - Grass
-  - KeyPad
   - Floor
+  - KeyPad
   - Object
   layers:
   - Default
