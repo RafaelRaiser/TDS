@@ -8,7 +8,7 @@ public class KeyPadManager : MonoBehaviour
     public Transform playerCamera;  // A câmera do jogador
     public TextMeshProUGUI textoInteracao;
 
-    private bool isNearKeypad = false; // Declare a variável isNearKeypad
+    private bool isNearKeypad = false;
     private bool isPuzzleActive = false;
 
     void Update()
@@ -25,7 +25,7 @@ public class KeyPadManager : MonoBehaviour
         }
         else
         {
-            isNearKeypad = false; // Resetar para false se não estiver perto do keypad
+            isNearKeypad = false;
         }
     }
 
@@ -48,10 +48,14 @@ public class KeyPadManager : MonoBehaviour
     {
         isPuzzleActive = true;
         keypadUI.SetActive(true);  // Mostra a UI do Keypad
+
     }
+
+
 
     private void AtualizarTexto()
     {
         textoInteracao.text = "[E] INTERAGIR";
     }
+
 }
