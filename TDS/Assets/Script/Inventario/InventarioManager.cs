@@ -16,6 +16,7 @@ public class InventarioManager : MonoBehaviour
     {
         iController = FindObjectOfType<InterfaceManager>();
     }
+
     void Update()
     {
         RaycastHit hit;
@@ -55,6 +56,58 @@ public class InventarioManager : MonoBehaviour
             else if (hit.collider.tag != "Object")
             {
                 iController.itemText.text = null;
+            }
+        }
+    }
+
+    public void RemoverItemPorNome(string itemName)
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i] != null && slots[i].itemName == itemName)
+            {
+                // Decrementa a quantidade do item
+                slotAmount[i]--;
+
+                if (slotAmount[i] <= 0)
+                {
+                    // Remove o item do slot
+                    slots[i] = null;
+                    slotImage[i].sprite = null; // Limpa a imagem do slot
+
+                    // Realoca os itens para evitar lacunas
+                    RealocarInventario(i);
+                }
+                else
+                {
+                    // Atualiza a imagem do slot com o sprite do item
+                    slotImage[i].sprite = slots[i].itemSprite;
+                }
+
+                Debug.Log("Item " + itemName + " removido do inventário.");
+                return; // Sai do método após remover o item
+            }
+        }
+
+        Debug.Log("Item " + itemName + " não encontrado no inventário.");
+    }
+
+    private void RealocarInventario(int slotIndex)
+    {
+        // Realoca itens para evitar lacunas
+        for (int i = slotIndex; i < slots.Length - 1; i++)
+        {
+            // Move o item do próximo slot para o slot atual, se o slot atual estiver vazio
+            if (slots[i] == null && slots[i + 1] != null)
+            {
+                slots[i] = slots[i + 1];
+                slotAmount[i] = slotAmount[i + 1];
+                slotImage[i].sprite = slotImage[i + 1].sprite;
+
+                // Limpa o próximo slot
+                slots[i + 1] = null;
+                slotAmount[i + 1] = 0;
+                slotImage[i + 1].sprite = null;
             }
         }
     }

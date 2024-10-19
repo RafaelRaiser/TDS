@@ -13353,14 +13353,11 @@ GameObject:
   - component: {fileID: 267923842}
   - component: {fileID: 267923840}
   - component: {fileID: 267923849}
-  - component: {fileID: 267923839}
+  - component: {fileID: 267923843}
   - component: {fileID: 267923848}
   - component: {fileID: 267923837}
   - component: {fileID: 267923836}
   - component: {fileID: 267923835}
-  - component: {fileID: 267923843}
-  - component: {fileID: 267923844}
-  - component: {fileID: 267923846}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -13444,29 +13441,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &267923839
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267923834}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &267923840
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13542,43 +13516,6 @@ MonoBehaviour:
   distanciaMax: 5.06
   playerCamera: {fileID: 963194228}
   interagirTexto: {fileID: 233252245}
---- !u!114 &267923844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267923834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d8d45dfcec8a82479d1b0a30f7edcf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionRange: 3
-  inventory: {fileID: 0}
---- !u!114 &267923846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267923834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91c00e4101d8aeb468e77f3ce2e5d7ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 3
-  slowSpeed: 1.5
-  audioSource: {fileID: 953043716}
-  grassSteps:
-  - {fileID: 8300000, guid: bc754fc46da61ce439ef42b63a372e82, type: 3}
-  - {fileID: 8300000, guid: 2f2f9348ef2a2a4449b796f888d7b5a6, type: 3}
-  woodSteps:
-  - {fileID: 8300000, guid: 74684ab7b2acefc4ba943a3fad9f4041, type: 3}
-  - {fileID: 8300000, guid: 50e60f5a36ff029418083cbdb03dc37f, type: 3}
-  - {fileID: 8300000, guid: 061c3b8ae7b2cd74ea4fdf335e98baab, type: 3}
-  stepRate: 0.5
 --- !u!114 &267923848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13633,7 +13570,6 @@ MonoBehaviour:
   - {fileID: 765406698}
   - {fileID: 1550873111}
   slotAmount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
-  interagirTexto: {fileID: 233252245}
 --- !u!1001 &267939906
 PrefabInstance:
   m_ObjectHideFlags: 0

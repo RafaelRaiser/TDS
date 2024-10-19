@@ -1,14 +1,14 @@
 using TMPro;
 using UnityEngine;
 
-public class KeypadInteraction : MonoBehaviour
+public class KeyPadManager : MonoBehaviour
 {
     public float distanciaMax = 5f;
     public GameObject keypadUI;  // A UI do Keypad que será ativada
     public Transform playerCamera;  // A câmera do jogador
     public TextMeshProUGUI textoInteracao;
 
-    private bool isNearKeypad = false;
+    private bool isNearKeypad = false; // Declare a variável isNearKeypad
     private bool isPuzzleActive = false;
 
     void Update()
@@ -25,7 +25,7 @@ public class KeypadInteraction : MonoBehaviour
         }
         else
         {
-            isNearKeypad = false;
+            isNearKeypad = false; // Resetar para false se não estiver perto do keypad
         }
     }
 
@@ -48,14 +48,10 @@ public class KeypadInteraction : MonoBehaviour
     {
         isPuzzleActive = true;
         keypadUI.SetActive(true);  // Mostra a UI do Keypad
-
     }
 
-
-
-    private void AtualizarTexto() 
+    private void AtualizarTexto()
     {
         textoInteracao.text = "[E] INTERAGIR";
     }
-
 }

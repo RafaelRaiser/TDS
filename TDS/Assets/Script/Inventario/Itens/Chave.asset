@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad8b86363e5b5fa40ab27b76edd91d36, type: 3}
   m_Name: Chave
   m_EditorClassIdentifier: 
-  itemName: Chave
+  itemName: CHAVE
   itemSprite: {fileID: 21300000, guid: 5bbd29b842d27754596feeb5f711b24a, type: 3}
