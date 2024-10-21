@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad8b86363e5b5fa40ab27b76edd91d36, type: 3}
+  m_Script: {fileID: 11500000, guid: aae57e75358f50e4fa5d1ada8c808769, type: 3}
   m_Name: Chave
   m_EditorClassIdentifier: 
-  itemName: CHAVE
-  itemSprite: {fileID: 21300000, guid: 5bbd29b842d27754596feeb5f711b24a, type: 3}
+  itemName: Chave
+  itemSprite: {fileID: 21300000, guid: d9b5ca1a187efbd4c9e70d08a97c4bbf, type: 3}
