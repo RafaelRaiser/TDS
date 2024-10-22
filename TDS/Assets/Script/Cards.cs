@@ -22,7 +22,8 @@ public class Cards : MonoBehaviour,IInteragivel
     public void Interact()
     {
         // Alterna a visibilidade do painel
-        painel.SetActive(!painel.activeSelf);
+        painel.SetActive(painel.activeSelf) ;
+        
     }
 
     // Método para definir o texto de interação
