@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Chave
   m_EditorClassIdentifier: 
   itemName: Chave
-  itemSprite: {fileID: 21300000, guid: d9b5ca1a187efbd4c9e70d08a97c4bbf, type: 3}
+  itemSprite: {fileID: 21300000, guid: e2148c555c2db4c469c25b6530d56de1, type: 3}

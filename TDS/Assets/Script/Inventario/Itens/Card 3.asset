@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aae57e75358f50e4fa5d1ada8c808769, type: 3}
   m_Name: Card 3
   m_EditorClassIdentifier: 
-  itemName: 
-  itemSprite: {fileID: 0}
+  itemName: Card 3
+  itemSprite: {fileID: 21300000, guid: 230fca3a38d901d45bb8e60ddadd9f9b, type: 3}
