@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     public Vector3 move;
 
     public float moveSpeed = 2f;  // Valor maior para garantir que o movimento seja perceptível
-    public float lookSensitivity = 2f;
+    public float lookSensitivity = 1.5f;
     public float slowSpeed = 1f;
     public float gravity = -9.81f;
 
