@@ -14,6 +14,7 @@ public class Porta : MonoBehaviour, IInteragivel
     private Animation portaAnimacao;
 
     [SerializeField] bool havePuzzle;
+    [SerializeField] bool haveKey;
 
     private void Start()
     {
@@ -44,7 +45,7 @@ public class Porta : MonoBehaviour, IInteragivel
 
     public void Interact()
     {
-        if (!havePuzzle)
+        if (!havePuzzle && !haveKey)
         {
             portaAberta = !portaAberta; // Alterna entre abrir e fechar
 
@@ -58,6 +59,17 @@ public class Porta : MonoBehaviour, IInteragivel
             }
 
             DefinirTexto();
+        }
+        else if(haveKey)
+        {
+            if (InventarioManager.instance.PesquisarItem("Chave"))
+            {
+                AbrirPorta();
+            }
+            else
+            {
+
+            }
         }
         else
         {

@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 2.22
+  m_AmbientIntensity: 0
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -9507,6 +9507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomePorta: Door_Basement
   havePuzzle: 1
+  haveKey: 0
 --- !u!4 &123141427 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4417844832236486, guid: cd9ee0d725941cb43924fc8ace46aff6, type: 3}
@@ -19207,7 +19208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: {x: 0, y: 0, z: 0}
-  moveSpeed: 2
+  moveSpeed: 3
   lookSensitivity: 2
   slowSpeed: 1
   gravity: -9.81
@@ -19287,7 +19288,7 @@ Transform:
   m_GameObject: {fileID: 267923834}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 26.41, y: 0.94, z: 116.32}
+  m_LocalPosition: {x: 78.21, y: 0.94, z: 173.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27025,6 +27026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomePorta: Door2
   havePuzzle: 0
+  haveKey: 0
 --- !u!1001 &409585619
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28494,6 +28496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomePorta: Door_Glass
   havePuzzle: 0
+  haveKey: 0
 --- !u!1001 &423522042
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46058,7 +46061,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &705507994
 Light:
   m_ObjectHideFlags: 0
@@ -47896,6 +47899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomePorta: Door2
   havePuzzle: 0
+  haveKey: 0
 --- !u!1 &732244885
 GameObject:
   m_ObjectHideFlags: 0
@@ -50663,6 +50667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomePorta: Door2
   havePuzzle: 0
+  haveKey: 0
 --- !u!1001 &772094520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54460,6 +54465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomePorta: Table2_drawer
   havePuzzle: 0
+  haveKey: 0
 --- !u!65 &819993193
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56254,6 +56260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomePorta: Cabinet1_Door2
   havePuzzle: 0
+  haveKey: 0
 --- !u!4 &853206735 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4417844832236486, guid: cd9ee0d725941cb43924fc8ace46aff6, type: 3}
@@ -58662,6 +58669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomePorta: Door_Basement
   havePuzzle: 0
+  haveKey: 0
 --- !u!1001 &893234455
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61126,68 +61134,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4921635754398162, guid: 7171862ec87b07b47addc4d6c1e3686d, type: 3}
   m_PrefabInstance: {fileID: 891543957}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &924221423
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1530343213}
-    m_Modifications:
-    - target: {fileID: 8827747392519666232, guid: 7858c6eb3dd7fde4f9a41c7319711cad, type: 3}
-      propertyPath: m_Name
-      value: Floor1 (39)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8827747392519693848, guid: 7858c6eb3dd7fde4f9a41c7319711cad, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -49.275154
-      objectReference: {fileID: 0}
-    - target: {fileID: 8827747392519693848, guid: 7858c6eb3dd7fde4f9a41c7319711cad, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -5.544494
-      objectReference: {fileID: 0}
-    - target: {fileID: 8827747392519693848, guid: 7858c6eb3dd7fde4f9a41c7319711cad, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -79.958466
-      objectReference: {fileID: 0}
-    - target: {fileID: 8827747392519693848, guid: 7858c6eb3dd7fde4f9a41c7319711cad, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8827747392519693848, guid: 7858c6eb3dd7fde4f9a41c7319711cad, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8827747392519693848, guid: 7858c6eb3dd7fde4f9a41c7319711cad, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8827747392519693848, guid: 7858c6eb3dd7fde4f9a41c7319711cad, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8827747392519693848, guid: 7858c6eb3dd7fde4f9a41c7319711cad, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8827747392519693848, guid: 7858c6eb3dd7fde4f9a41c7319711cad, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8827747392519693848, guid: 7858c6eb3dd7fde4f9a41c7319711cad, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7858c6eb3dd7fde4f9a41c7319711cad, type: 3}
---- !u!4 &924221424 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8827747392519693848, guid: 7858c6eb3dd7fde4f9a41c7319711cad, type: 3}
-  m_PrefabInstance: {fileID: 924221423}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &924792031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61667,6 +61613,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomePorta: Door2
   havePuzzle: 0
+  haveKey: 0
 --- !u!1 &929585686
 GameObject:
   m_ObjectHideFlags: 0
@@ -76141,13 +76088,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144913490}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.13899587, y: 0.01849625, z: -0.011069044, w: 0.99005836}
+  m_LocalPosition: {x: -0.08, y: 1.64, z: 0.28}
+  m_LocalScale: {x: 2.05735, y: 1.071638, z: 1.288887}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 963194228}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 164, y: -178, z: -181}
 --- !u!114 &1144913492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76168,7 +76115,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144913490}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
@@ -76707,6 +76654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomePorta: Cabinet1_Drawer2
   havePuzzle: 0
+  haveKey: 0
 --- !u!1001 &1153169880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79822,7 +79770,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b694b8ec5c41f6247843a2b67222fda6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 46.645
+      value: 46.871
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b694b8ec5c41f6247843a2b67222fda6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -79830,7 +79778,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b694b8ec5c41f6247843a2b67222fda6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 122.296
+      value: 122.091
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b694b8ec5c41f6247843a2b67222fda6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -79867,7 +79815,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: b694b8ec5c41f6247843a2b67222fda6, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1438533945}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: b694b8ec5c41f6247843a2b67222fda6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1438533946}
   m_SourcePrefab: {fileID: 100100000, guid: b694b8ec5c41f6247843a2b67222fda6, type: 3}
 --- !u!1001 &1204170096
 PrefabInstance:
@@ -83593,6 +83547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomePorta: Door_Glass
   havePuzzle: 0
+  haveKey: 0
 --- !u!4 &1252800237 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4838037361664204, guid: 8987f42b5e586b54dafc61270de5d973, type: 3}
@@ -87777,6 +87732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomePorta: Door2
   havePuzzle: 0
+  haveKey: 0
 --- !u!1001 &1289515779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94948,6 +94904,127 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8827747392519693848, guid: 7858c6eb3dd7fde4f9a41c7319711cad, type: 3}
   m_PrefabInstance: {fileID: 1396074566}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1396517692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1396517697}
+  - component: {fileID: 1396517696}
+  - component: {fileID: 1396517695}
+  - component: {fileID: 1396517694}
+  - component: {fileID: 1396517693}
+  m_Layer: 0
+  m_Name: Capsule
+  m_TagString: Object
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!136 &1396517693
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396517692}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1396517694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396517692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af868422b8c534646b9a4896469f866b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipoObjeto: {fileID: 11400000, guid: 2eacbcb3fef58634daf766cccfee9f15, type: 2}
+--- !u!23 &1396517695
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396517692}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1396517696
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396517692}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1396517697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396517692}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 77.1, y: 1.25, z: 173.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1397494315 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4968966077293118, guid: 42336741f2631f04789ea7bc779e0d76, type: 3}
@@ -98263,6 +98340,47 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 714467581646924596, guid: 7d34eee80e2da9c45bbc9b9d1f67a376, type: 3}
   m_PrefabInstance: {fileID: 1437245005}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1438533940 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: b694b8ec5c41f6247843a2b67222fda6, type: 3}
+  m_PrefabInstance: {fileID: 1203305740}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1438533945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438533940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af868422b8c534646b9a4896469f866b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipoObjeto: {fileID: 11400000, guid: 78c136db8e54db8459650bfa18a5c0d3, type: 2}
+--- !u!136 &1438533946
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438533940}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.056325037
+  m_Height: 0.3365762
+  m_Direction: 1
+  m_Center: {x: -0.01466707, y: -0.0013841902, z: 0.005080689}
 --- !u!1001 &1439614387
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -104659,6 +104777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomePorta: Door_Basement
   havePuzzle: 0
+  haveKey: 1
 --- !u!1001 &1525229742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105122,7 +105241,6 @@ Transform:
   - {fileID: 1392525851}
   - {fileID: 901798187}
   - {fileID: 1732619350}
-  - {fileID: 924221424}
   - {fileID: 532620084}
   - {fileID: 1172498106}
   - {fileID: 1295234591}
@@ -111064,6 +111182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomePorta: Cabinet1_Drawer1
   havePuzzle: 0
+  haveKey: 0
 --- !u!1001 &1623180338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122502,6 +122621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomePorta: Cabinet1_Door1
   havePuzzle: 0
+  haveKey: 0
 --- !u!4 &1801823503 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9192128204884460523, guid: 3e54aa2883591b248a3b7c5db8f329b0, type: 3}
@@ -135927,6 +136047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomePorta: Door2
   havePuzzle: 0
+  haveKey: 0
 --- !u!4 &1977523539 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4392266486786024, guid: ff68249fca5833f45a54d25567ceb8bb, type: 3}
@@ -147885,3 +148006,4 @@ SceneRoots:
   - {fileID: 155196860}
   - {fileID: 972196433}
   - {fileID: 1203305740}
+  - {fileID: 1396517697}
