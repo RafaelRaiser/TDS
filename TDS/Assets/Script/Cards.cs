@@ -9,7 +9,7 @@ public class Cards : MonoBehaviour,IInteragivel
 {
     public GameObject painel; // Painel a ser ativado/desativado
     [SerializeField] private string textoInteracao = "Pressione E para interagir"; // Texto padrão
-    public TextMeshProUGUI textoTMP; // Componente TextMeshPro opcional para exibir o texto dinamicamente
+    //public TextMeshProUGUI textoTMP; // Componente TextMeshPro opcional para exibir o texto dinamicamente
 
     public string TextInteragivel { get; set; }
 
@@ -17,7 +17,6 @@ public class Cards : MonoBehaviour,IInteragivel
     {
         DefinirTexto(); // Define o texto no início
     }
-
     // Método chamado quando o jogador pressiona "E"
     public void Interact()
     {
@@ -33,9 +32,9 @@ public class Cards : MonoBehaviour,IInteragivel
         TextInteragivel = textoInteracao;
 
         // Atualiza um TextMeshProUGUI na UI (opcional)
-        if (textoTMP != null)
+       // if (textoTMP != null)
         {
-            textoTMP.text = TextInteragivel;
+        //    textoTMP.text = TextInteragivel;
         }
     }
 }
