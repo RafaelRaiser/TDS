@@ -11,7 +11,12 @@ public class InventarioManager : MonoBehaviour
     public Image[] slotImage; // Imagens dos slots
     public int[] slotAmount; // Quantidade de itens nos slots
     private InterfaceManager iController;
+    public static InventarioManager instance;
 
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
         iController = FindObjectOfType<InterfaceManager>();
@@ -111,4 +116,16 @@ public class InventarioManager : MonoBehaviour
             }
         }
     }
+    public bool PesquisarItem(string itemName)
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i] != null && slots[i].itemName == itemName)
+            {
+                return true; // Retorna verdadeiro se o item com o nome fornecido for encontrado
+            }
+        }
+        return false; // Retorna falso se o item não for encontrado
+    }
+
 }
