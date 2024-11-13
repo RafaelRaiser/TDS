@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 10b29adfc0b37c14787c42dde77c4880
+<<<<<<<< Updated upstream:TDS/Assets/TextMesh Pro/Resources/Fonts & Materials/heatizen.meta
+guid: a857608a3532e9c45b41ff35cd095a6d
+========
+guid: f87fcdbc5b0be5a4dae8897da0af8360
+>>>>>>>> Stashed changes:TDS/Assets/HierarchyDecorator.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
