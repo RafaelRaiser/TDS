@@ -26,7 +26,7 @@
 # Visual Studio cache directory
 .vs/
 
-#Mansion set
+#ASSETS
 
 /[Aa]ssets/ItensMedicos/
 /[Aa]ssets/ScifiOfficeLite/
@@ -36,6 +36,7 @@
 /[Aa]ssets/Armas/
 /[Aa]ssets/Mansion\ set/
 /[Aa]ssets/Mapa/
+
 
 # Gradle cache directory
 .gradle/
