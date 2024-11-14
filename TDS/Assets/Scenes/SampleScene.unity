@@ -56610,12 +56610,12 @@ GameObject:
   - component: {fileID: 859675144}
   - component: {fileID: 859675143}
   m_Layer: 5
-  m_Name: SucessoNotification
+  m_Name: Notification
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &859675142
 RectTransform:
   m_ObjectHideFlags: 0
@@ -114278,6 +114278,7 @@ GameObject:
   - component: {fileID: 1655578018}
   - component: {fileID: 1655578017}
   - component: {fileID: 1655578016}
+  - component: {fileID: 1655578020}
   m_Layer: 5
   m_Name: NotificationCanvas
   m_TagString: Untagged
@@ -114368,6 +114369,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1655578020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655578015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8574e52ec8ebf284c88aeb14e5dfb546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelNotification: {fileID: 859675141}
+  text: {fileID: 1342412729}
+  sucessoSprite: {fileID: 21300000, guid: fdfa1bae7036d6646a2e3b23a997a4ab, type: 3}
+  erroSprite: {fileID: 21300000, guid: fdfa1bae7036d6646a2e3b23a997a4ab, type: 3}
+  informacaoSprite: {fileID: 21300000, guid: fdfa1bae7036d6646a2e3b23a997a4ab, type: 3}
 --- !u!4 &1656101692 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1273085680711717523, guid: bf5ec2527fc81ee4893ec489cef8a881, type: 3}

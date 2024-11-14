@@ -1,40 +1,47 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Notification : MonoBehaviour
 {
     public static Notification instance;
-    public GameObject sucessoNotification;
-    public GameObject erroNotification;
-    public GameObject informacaoNotification;
+    public GameObject panelNotification;
+    [SerializeField] TextMeshProUGUI text;
+    [SerializeField] Sprite sucessoSprite, erroSprite, informacaoSprite;
 
     private void Awake()
     {
         instance = this;
     }
-
+    private void Start()
+    {
+        Notificar("Informacao", "Investigue o local");
+    }
     public void Notificar(string tipo, string mensagem)
     {
         StopAllCoroutines(); // Interrompe qualquer notificação anterior para reiniciar o timer
 
         if (tipo == "Sucesso")
         {
-            sucessoNotification.SetActive(true);
-            sucessoNotification.GetComponent<TextMeshProUGUI>().text = mensagem;
-            StartCoroutine(DesativarNotificacao(sucessoNotification, 10f));
+            panelNotification.SetActive(true);
+            panelNotification.transform.GetChild(0).GetComponent<Image>().sprite = sucessoSprite;
+            text.text = mensagem;
+            StartCoroutine(DesativarNotificacao(panelNotification, 6f));
         }
         else if (tipo == "Erro")
         {
-            erroNotification.SetActive(true);
-            erroNotification.GetComponent<TextMeshProUGUI>().text = mensagem;
-            StartCoroutine(DesativarNotificacao(erroNotification, 10f));
+            panelNotification.SetActive(true);
+            panelNotification.transform.GetChild(0).GetComponent<Image>().sprite = erroSprite;
+            text.text = mensagem;
+            StartCoroutine(DesativarNotificacao(panelNotification, 6f));
         }
         else if (tipo == "Informacao")
         {
-            informacaoNotification.SetActive(true);
-            informacaoNotification.GetComponent<TextMeshProUGUI>().text = mensagem;
-            StartCoroutine(DesativarNotificacao(informacaoNotification, 10f));
+            panelNotification.SetActive(true);
+            panelNotification.transform.GetChild(0).GetComponent<Image>().sprite = informacaoSprite;
+            text.text = mensagem;
+            StartCoroutine(DesativarNotificacao(panelNotification, 6f));
         }
     }
 

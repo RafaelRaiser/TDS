@@ -87,6 +87,7 @@ public class KeyPad : MonoBehaviour, IInteragivel
     {
         playerInput = "";
         AtualizarDisplay(); // Reseta o display
+        
     }
 
     // Verifica se o código inserido está correto
@@ -94,6 +95,7 @@ public class KeyPad : MonoBehaviour, IInteragivel
     {
         if (playerInput == correctCode)
         {
+            Notification.instance.Notificar("Sucesso", "Código Correto");
             Debug.Log("Codigo Correto");
 
             // Abre a porta se o código estiver correto
@@ -106,6 +108,7 @@ public class KeyPad : MonoBehaviour, IInteragivel
         else
         {
             Debug.Log("Codigo Incorreto");
+            Notification.instance.Notificar("Erro","Código Incorreto");
         }
 
         ResetCode(); // Reseta o código após a tentativa

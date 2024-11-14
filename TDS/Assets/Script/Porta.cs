@@ -68,12 +68,8 @@ public class Porta : MonoBehaviour, IInteragivel
             }
             else
             {
-
+                Notification.instance.Notificar("Informacao", "Encontre a chave");
             }
-        }
-        else
-        {
-            text = "";
         }
         
     }
