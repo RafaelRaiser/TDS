@@ -1,29 +1,24 @@
+// PuzzleActivator.cs
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PuzzleActivator : MonoBehaviour
 {
-    private GeniusPuzzle geniusPuzzle;
+    [SerializeField] private GeniusPuzzle puzzle;
 
-    void Start()
+    void Update()
     {
-        geniusPuzzle = FindObjectOfType<GeniusPuzzle>();
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        if (Input.GetKeyDown(KeyCode.E)) // Pressionar "E" ativa o puzzle imediatamente
         {
-            geniusPuzzle.ActivatePuzzle();
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            geniusPuzzle.isPuzzleActive = false;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit, 5f))
+            {
+                if (hit.collider.CompareTag("Puzzle"))
+                {
+                    puzzle.ActivatePuzzle();
+                }
+            }
         }
     }
 }
