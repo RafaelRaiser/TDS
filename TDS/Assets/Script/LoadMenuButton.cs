@@ -10,7 +10,7 @@ public class MenuLoader : MonoBehaviour
     void Update()
     {
         // Verifica se a tecla Esc foi pressionada
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.Escape) && Input.GetKey(KeyCode.LeftShift))
         {
             // Carrega a cena do menu
             LoadMenu();
