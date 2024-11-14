@@ -1,111 +1,175 @@
+// GeniusPuzzle.cs
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine.UI;
 
 public class GeniusPuzzle : MonoBehaviour
 {
-    public List<Button> colorButtons;
-    public List<Color> buttonColors;
-    public Button closeButton;
-    public GameObject puzzleUI;
-    public TextMeshProUGUI feedbackText;
+    public int score = 0;
+    public int targetScore = 666; // Pontuação necessária para concluir o puzzle
+    public float timeLimit = 60f; // Tempo limite para o puzzle em segundos
+    private float currentTime;
 
-    private List<int> sequence = new List<int>();
-    private int playerIndex = 0;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI timerText;
+    public GameObject quitButton;
+
+    public Button[] colorButtons; // Botões das cores do jogo
+    private List<int> sequence = new List<int>(); // Sequência de cores para seguir
+    private int playerStep = 0; // Passo atual do jogador na sequência
     private bool isPlayerTurn = false;
-    public bool isPuzzleActive = false;
+
+    private int pointsPerCorrect = 50; // Pontos por acerto
+    private int initialSequenceLength = 3; // Número inicial de cores na sequência
+    private float timeBonusPerCorrect = 5f; // Bônus de tempo por acerto
+    private float timePenaltyPerError = 10f; // Penalidade de tempo por erro
 
     void Start()
     {
-        puzzleUI.SetActive(false);
-
-        for (int i = 0; i < colorButtons.Count; i++)
-        {
-            colorButtons[i].image.color = buttonColors[i];
-            int index = i;
-            colorButtons[i].onClick.AddListener(() => PlayerInput(index));
-        }
-
-        closeButton.onClick.AddListener(ClosePuzzleUI);
-    }
-
-    void Update()
-    {
-        if (isPuzzleActive && Input.GetKeyDown(KeyCode.E))
-        {
-            OpenPuzzleUI();
-            StartCoroutine(GenerateSequence());
-        }
+        quitButton.SetActive(false);
+        gameObject.SetActive(false); // Começa desativado
     }
 
     public void ActivatePuzzle()
     {
-        isPuzzleActive = true;
+        gameObject.SetActive(true);
+        StartPuzzle();
+
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        quitButton.SetActive(true);
     }
 
-    void OpenPuzzleUI()
+    public void DeactivatePuzzle()
     {
-        puzzleUI.SetActive(true);
-        feedbackText.text = "Observe a sequência!";
+        gameObject.SetActive(false);
+
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        quitButton.SetActive(false);
     }
 
-    void ClosePuzzleUI()
+    private void Update()
     {
-        puzzleUI.SetActive(false);
-        isPuzzleActive = false;
-    }
-
-    IEnumerator GenerateSequence()
-    {
-        playerIndex = 0;
-        sequence.Add(Random.Range(0, colorButtons.Count));
-        isPlayerTurn = false;
-
-        for (int i = 0; i < sequence.Count; i++)
+        if (gameObject.activeSelf)
         {
-            int colorIndex = sequence[i];
-            HighlightButton(colorButtons[colorIndex]);
-            yield return new WaitForSeconds(1f);
-            ResetButton(colorButtons[colorIndex]);
+            currentTime -= Time.deltaTime;
+            UpdateTimerUI();
+
+            if (currentTime <= 0)
+            {
+                currentTime = 0;
+                GameOver();
+            }
+        }
+    }
+
+    private void StartPuzzle()
+    {
+        currentTime = timeLimit;
+        score = 0;
+        UpdateScoreUI();
+        UpdateTimerUI();
+
+        sequence.Clear();
+        GenerateNewSequence(initialSequenceLength); // Gera uma sequência inicial
+        StartCoroutine(ShowSequence()); // Mostra a sequência imediatamente
+    }
+
+    private void GenerateNewSequence(int length)
+    {
+        for (int i = 0; i < length; i++)
+        {
+            int randomIndex = Random.Range(0, colorButtons.Length);
+            sequence.Add(randomIndex);
+        }
+    }
+
+    private IEnumerator ShowSequence()
+    {
+        isPlayerTurn = false;
+        yield return new WaitForSeconds(1f);
+
+        foreach (int index in sequence)
+        {
+            var buttonImage = colorButtons[index].GetComponent<Image>();
+            var originalColor = buttonImage.color;
+
+            buttonImage.color = new Color(originalColor.r * 0.5f, originalColor.g * 0.5f, originalColor.b * 0.5f); // Escurece a cor
             yield return new WaitForSeconds(0.5f);
+
+            buttonImage.color = originalColor; // Restaura a cor original
+            yield return new WaitForSeconds(0.2f);
         }
 
         isPlayerTurn = true;
-        feedbackText.text = "Sua vez! Repita a sequência.";
+        playerStep = 0;
     }
 
-    void HighlightButton(Button button)
+    private void UpdateScoreUI()
     {
-        button.image.color = Color.white;
+        if (scoreText != null)
+        {
+            scoreText.text = "Score: " + score;
+        }
     }
 
-    void ResetButton(Button button)
+    private void UpdateTimerUI()
     {
-        int index = colorButtons.IndexOf(button);
-        button.image.color = buttonColors[index];
+        if (timerText != null)
+        {
+            timerText.text = "Time: " + Mathf.Ceil(currentTime).ToString();
+        }
     }
 
-    void PlayerInput(int colorIndex)
+    public void OnColorButtonClick(Button button)
     {
         if (!isPlayerTurn) return;
 
-        if (sequence[playerIndex] == colorIndex)
+        int buttonIndex = System.Array.IndexOf(colorButtons, button);
+        if (buttonIndex == sequence[playerStep])
         {
-            playerIndex++;
-            if (playerIndex >= sequence.Count)
+            playerStep++;
+            score += pointsPerCorrect;
+            currentTime += timeBonusPerCorrect;
+            UpdateScoreUI();
+            UpdateTimerUI();
+
+            if (playerStep >= sequence.Count)
             {
-                feedbackText.text = "Correto! Preparando a próxima sequência.";
-                isPlayerTurn = false;
-                StartCoroutine(GenerateSequence());
+                if (score >= targetScore)
+                {
+                    PuzzleComplete();
+                }
+                else
+                {
+                    sequence.Add(Random.Range(0, colorButtons.Length)); // Adiciona uma nova cor à sequência para aumentar a dificuldade
+                    StartCoroutine(ShowSequence()); // Mostra a sequência atualizada
+                }
             }
         }
         else
         {
-            feedbackText.text = "Errou! Tente novamente.";
-            sequence.Clear();
-            StartCoroutine(GenerateSequence());
+            currentTime -= timePenaltyPerError; // Penalidade de tempo por erro
+            UpdateTimerUI();
+            GameOver();
         }
     }
+
+    private void GameOver()
+    {
+        Debug.Log("O tempo acabou ou a sequência foi incorreta. Tente novamente.");
+        DeactivatePuzzle();
+    }
+
+    private void PuzzleComplete()
+    {
+        Debug.Log("Parabéns! Você completou o puzzle com 666 pontos.");
+        DeactivatePuzzle();
+    }
 }
+
