@@ -15,7 +15,7 @@ public class GeniusPuzzle : MonoBehaviour
     private List<int> sequence = new List<int>();
     private int playerIndex = 0;
     private bool isPlayerTurn = false;
-    private bool isPuzzleActive = false;
+    public bool isPuzzleActive = false;
 
     void Start()
     {
