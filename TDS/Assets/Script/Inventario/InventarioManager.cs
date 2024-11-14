@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Assertions.Must;
 
 public class InventarioManager : MonoBehaviour
 {
@@ -53,6 +54,12 @@ public class InventarioManager : MonoBehaviour
 
                             // Destroi o objeto coletado
                             Destroy(hit.transform.gameObject);
+                            Notification.instance.Notificar("Sucesso", slots[i].name + " Coletado");
+
+                            if (slots[i].name == "Lanterna")
+                            {
+                                Notification.instance.Notificar("Informacao", "[F] Para ligar a Lanterna");
+                            }
                             break;
                         }
                     }

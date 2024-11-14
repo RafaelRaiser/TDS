@@ -29,6 +29,39 @@ public class KeyPad : MonoBehaviour, IInteragivel
         DefinirTexto();
     }
 
+    private void Update()
+    {
+        if (isPuzzleActive)
+        {
+            // Captura as teclas numéricas de 0 a 9
+            for (int i = 0; i <= 9; i++)
+            {
+                if (Input.GetKeyDown(i.ToString()))
+                {
+                    AddDigit(i.ToString());
+                }
+            }
+
+            // Captura a tecla Enter para confirmar o código
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                CheckCode();
+            }
+
+            // Captura a tecla Backspace para resetar o código
+            if (Input.GetKeyDown(KeyCode.Backspace))
+            {
+                ResetCode();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape) && isPuzzleActive)
+            {
+                keypadUI.SetActive(false);
+                isPuzzleActive=false;   
+            }
+        }
+    }
+
     // Método chamado quando o jogador interage com o Keypad
     public void Interact()
     {
@@ -36,21 +69,16 @@ public class KeyPad : MonoBehaviour, IInteragivel
         {
             isPuzzleActive = true; // Ativa o estado do puzzle
             keypadUI.SetActive(true); // Mostra a UI do Keypad
-            Cursor.lockState = CursorLockMode.Confined; // Libera o cursor
-            Cursor.visible = true; // Torna o cursor visível
         }
     }
 
     // Adiciona dígitos ao código do jogador
     public void AddDigit(string digit)
     {
-        playerInput += digit;
-        AtualizarDisplay(); // Atualiza o display do Keypad
-
-        // Verifica se o código inserido tem 4 dígitos
-        if (playerInput.Length == 4)
+        if (playerInput.Length < 4) // Limita o input a 4 dígitos
         {
-            CheckCode(); // Verifica se o código está correto
+            playerInput += digit;
+            AtualizarDisplay(); // Atualiza o display do Keypad
         }
     }
 
@@ -59,6 +87,7 @@ public class KeyPad : MonoBehaviour, IInteragivel
     {
         playerInput = "";
         AtualizarDisplay(); // Reseta o display
+        
     }
 
     // Verifica se o código inserido está correto
@@ -66,7 +95,8 @@ public class KeyPad : MonoBehaviour, IInteragivel
     {
         if (playerInput == correctCode)
         {
-            Debug.Log("Code is correct! Door opened.");
+            Notification.instance.Notificar("Sucesso", "Código Correto");
+            Debug.Log("Codigo Correto");
 
             // Abre a porta se o código estiver correto
             if (script != null)
@@ -77,7 +107,8 @@ public class KeyPad : MonoBehaviour, IInteragivel
         }
         else
         {
-            Debug.Log("Incorrect code!");
+            Debug.Log("Codigo Incorreto");
+            Notification.instance.Notificar("Erro","Código Incorreto");
         }
 
         ResetCode(); // Reseta o código após a tentativa
@@ -96,8 +127,6 @@ public class KeyPad : MonoBehaviour, IInteragivel
         {
             isPuzzleActive = false; // Desativa o estado do puzzle
             keypadUI.SetActive(false); // Esconde a UI do Keypad
-            Cursor.lockState = CursorLockMode.Locked; // Bloqueia o cursor novamente
-            Cursor.visible = false; // Esconde o cursor
         }
     }
 
