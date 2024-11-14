@@ -2,27 +2,66 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI; // Não se esqueça de importar o namespace do Unity UI
 
-public class Cards : MonoBehaviour,IInteragivel
-
-   
+public class Cards : MonoBehaviour, IInteragivel
 {
     public GameObject painel; // Painel a ser ativado/desativado
-    [SerializeField] private string textoInteracao = ""; // Texto padrão
-    //public TextMeshProUGUI textoTMP; // Componente TextMeshPro opcional para exibir o texto dinamicamente
+    [SerializeField] private string textoInteracao = "Pressione E para interagir"; // Texto padrão
+    public TextMeshProUGUI textoTMP; // Componente TextMeshPro opcional para exibir o texto dinamicamente
+    public Button fecharBotao; // Referência ao botão que fecha o painel
 
     public string TextInteragivel { get; set; }
 
     private void Start()
     {
         DefinirTexto(); // Define o texto no início
+
+        // Verifica se o botão foi atribuído e adiciona o evento de clique
+        if (fecharBotao != null)
+        {
+            fecharBotao.onClick.AddListener(ClosePanel);
+        }
     }
+
     // Método chamado quando o jogador pressiona "E"
     public void Interact()
     {
-        // Alterna a visibilidade do painel
-        painel.SetActive(!painel.activeSelf) ;
-        
+        bool isPanelActive = !painel.activeSelf; // Alterna o estado do painel (ativo ou não)
+        painel.SetActive(isPanelActive);
+
+        if (isPanelActive)
+        {
+            // Pausa o jogo e permite mover o mouse
+            Time.timeScale = 0; // Congela o tempo (pausa o jogo)
+            Cursor.lockState = CursorLockMode.None; // Desbloqueia o cursor
+            Cursor.visible = true; // Torna o cursor visível
+
+            // Desabilita o controle do personagem
+            DisableCharacterControl();
+        }
+        else
+        {
+            // Retorna o jogo ao normal e esconde o cursor
+            Time.timeScale = 1; // Retoma o tempo (despausa o jogo)
+            Cursor.lockState = CursorLockMode.Locked; // Trava o cursor
+            Cursor.visible = false; // Torna o cursor invisível
+
+            // Restaura o controle do personagem
+            EnableCharacterControl();
+        }
+    }
+
+    // Método para fechar o painel quando o botão for clicado
+    private void ClosePanel()
+    {
+        painel.SetActive(false); // Fecha o painel
+        Time.timeScale = 1; // Retoma o jogo (despausa)
+        Cursor.lockState = CursorLockMode.Locked; // Trava o cursor
+        Cursor.visible = false; // Torna o cursor invisível
+
+        // Restaura o controle do personagem
+        EnableCharacterControl();
     }
 
     // Método para definir o texto de interação
@@ -30,7 +69,27 @@ public class Cards : MonoBehaviour,IInteragivel
     {
         // Define o texto que será exibido ao interagir
         TextInteragivel = textoInteracao;
+
+        // Atualiza um TextMeshProUGUI na UI (opcional)
+        if (textoTMP != null)
+        {
+            textoTMP.text = TextInteragivel;
+        }
+    }
+
+    // Método para desabilitar o controle do personagem
+    private void DisableCharacterControl()
+    {
+        // Aqui você pode desabilitar o componente de movimento do personagem
+        // Exemplo (se o personagem usa o script PlayerMovement):
+        // GetComponent<PlayerMovement>().enabled = false; 
+    }
+
+    // Método para habilitar o controle do personagem
+    private void EnableCharacterControl()
+    {
+        // Aqui você pode reabilitar o componente de movimento do personagem
+        // Exemplo (se o personagem usa o script PlayerMovement):
+        // GetComponent<PlayerMovement>().enabled = true; 
     }
 }
-
-
