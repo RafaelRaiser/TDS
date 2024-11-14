@@ -19412,7 +19412,7 @@ Transform:
   m_GameObject: {fileID: 267923834}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 59, y: 0.94, z: 173.1}
+  m_LocalPosition: {x: 56.11, y: 0.94, z: 145.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -88781,7 +88781,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fdfa1bae7036d6646a2e3b23a997a4ab, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9fdb1e880489ff84984f4e5b75145f39, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -114383,9 +114383,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelNotification: {fileID: 859675141}
   text: {fileID: 1342412729}
-  sucessoSprite: {fileID: 21300000, guid: fdfa1bae7036d6646a2e3b23a997a4ab, type: 3}
-  erroSprite: {fileID: 21300000, guid: fdfa1bae7036d6646a2e3b23a997a4ab, type: 3}
-  informacaoSprite: {fileID: 21300000, guid: fdfa1bae7036d6646a2e3b23a997a4ab, type: 3}
+  sucessoSprite: {fileID: 21300000, guid: 9fdb1e880489ff84984f4e5b75145f39, type: 3}
+  erroSprite: {fileID: 21300000, guid: 66f32d87d8037d341a30a9c360945809, type: 3}
+  informacaoSprite: {fileID: 21300000, guid: e54e73023ca750c4d978eb88e22728dd, type: 3}
 --- !u!4 &1656101692 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1273085680711717523, guid: bf5ec2527fc81ee4893ec489cef8a881, type: 3}

@@ -1,19 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CardsManager : MonoBehaviour
 {
     public GameObject painel; // Painel a ser ativado/desativado
-    public Button fecharBotao; // Botão para fechar o painel
 
-    private void Start()
+    private void Update()
     {
         // Verifica se o botão foi atribuído e adiciona o evento de clique
-        if (fecharBotao != null)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            fecharBotao.onClick.AddListener(ClosePanel);
+            ClosePanel();
         }
     }
 
