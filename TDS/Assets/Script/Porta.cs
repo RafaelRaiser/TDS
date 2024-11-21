@@ -71,7 +71,12 @@ public class Porta : MonoBehaviour, IInteragivel
                 Notification.instance.Notificar("Informacao", "Encontre a chave");
             }
         }
-        
+        else
+        {
+            Notification.instance.Notificar("Informacao", "Resolva o Puzzle primeiro");
+        }
+
+
     }
 
     public void DefinirTexto()

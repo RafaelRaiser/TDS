@@ -103,6 +103,7 @@ public class KeyPad : MonoBehaviour, IInteragivel
             {
                 script.AbrirPorta();
                 CloseKeypad();
+                Notification.instance.Notificar("Informacao", "Ligue a energia no Disjuntor");
             }
         }
         else

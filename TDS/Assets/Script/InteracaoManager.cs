@@ -8,7 +8,6 @@ public class InteracaoManager : MonoBehaviour
     public float distanciaMax = 10f;
     public Transform playerCamera;
     public TextMeshProUGUI interagirTexto;
-
     private IInteragivel objetoAtual;
 
     private void Update()
@@ -37,7 +36,6 @@ public class InteracaoManager : MonoBehaviour
         {
             // Tenta obter o componente que implementa IInteragivel
             IInteragivel interagivel = hit.collider.GetComponent<IInteragivel>();
-
             if (interagivel != null)
             {
                 objetoAtual = interagivel;  // Armazena o objeto atual
@@ -53,8 +51,8 @@ public class InteracaoManager : MonoBehaviour
     {
         if (objetoAtual != null)
         {
-            interagirTexto.enabled = true;
             interagirTexto.text = objetoAtual.TextInteragivel;
+            interagirTexto.enabled = true;
         }
     }
 
